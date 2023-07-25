@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Navbar from "./components/layout/Navbar";
 import FollowBar from "./components/layout/FollowBar";
-import Modal from "./components/Modal";
+// import Modal from "./components/Modal";
 
 const inter = Inter({ subsets: ["latin"] });
 
