@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Navbar from "./components/layout/Navbar";
 import FollowBar from "./components/layout/FollowBar";
+import LoginModal from "./components/modals/LoginModal";
+import RegisterModal from "./components/modals/RegisterModal";
 // import Modal from "./components/Modal";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -27,6 +29,8 @@ export default function RootLayout({
               <div className="col-span-3 lg:col-span-2 border-x-[1px] border-[#24313b] ">
                 <>
                   {/* <Modal isOpen title="Test Modal" actionLabel="Submit" /> */}
+                  {/* <LoginModal /> */}
+                  <RegisterModal />
                   {children}
                 </>
               </div>
