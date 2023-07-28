@@ -29,7 +29,7 @@ export default function RootLayout({
               <div className="col-span-3 lg:col-span-2 border-x-[1px] border-[#24313b] ">
                 <>
                   {/* <Modal isOpen title="Test Modal" actionLabel="Submit" /> */}
-                  {/* <LoginModal /> */}
+                  <LoginModal />
                   <RegisterModal />
                   {children}
                 </>
