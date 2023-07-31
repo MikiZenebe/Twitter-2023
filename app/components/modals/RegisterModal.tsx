@@ -39,7 +39,9 @@ const RegisterModal = () => {
         name,
       });
 
-      toast.success("Account Created. 🚀");
+      toast.success("Account Created. 🚀", {
+        duration: 1500,
+      });
 
       signIn("credentials", {
         email,
@@ -53,7 +55,7 @@ const RegisterModal = () => {
     } finally {
       setIsLoading(false);
     }
-  }, [loginModal, isLodaing, registerModal]);
+  }, [registerModal, email, password, username, name]);
 
   const bodyContent = (
     <div className="flex flex-col gap-4">

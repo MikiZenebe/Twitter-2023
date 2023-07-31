@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { BsHouseFill, BsBellFill } from "react-icons/bs";
 import { FaUser } from "react-icons/fa";
@@ -5,8 +7,12 @@ import { BiLogOut } from "react-icons/bi";
 import SidebarLogo from "./SidebarLogo";
 import SidebarItem from "./SidebarItem";
 import SidebarTweetBtn from "./SidebarTweetBtn";
+import useCurrentUser from "@/app/hooks/useCurrentUser";
+import { signOut } from "next-auth/react";
 
 export default function Navbar() {
+  const { data: currentUser } = useCurrentUser();
+
   const items = [
     {
       label: "Home",
@@ -39,8 +45,14 @@ export default function Navbar() {
                 icon={item.icon}
               />
             ))}
+            {currentUser && (
+              <SidebarItem
+                onClick={() => signOut()}
+                icon={BiLogOut}
+                label="Logout"
+              />
+            )}
 
-            <SidebarItem onClick={() => {}} icon={BiLogOut} label="Logout" />
             <SidebarTweetBtn />
           </div>
         </div>
