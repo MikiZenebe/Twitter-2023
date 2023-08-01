@@ -6,7 +6,7 @@ import FollowBar from "./components/layout/FollowBar";
 import LoginModal from "./components/modals/LoginModal";
 import RegisterModal from "./components/modals/RegisterModal";
 import { Toaster } from "react-hot-toast";
-import { NextAuthProvider } from "@/libs/provider";
+import { NextAuthProvider } from "@/app/libs/provider";
 
 export const metadata: Metadata = {
   title: "Create Next App",

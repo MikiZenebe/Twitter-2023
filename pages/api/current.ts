@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import serverAuth from "./serverAuth";
+
+import serverAuth from "@/app/libs/serverAuth";
 
 export default async function handler(
   req: NextApiRequest,
