@@ -1,11 +1,28 @@
-import React from "react";
+import useUsers from "@/app/hooks/useUsers";
+import Avatar from "../Avatar";
 
 export default function FollowBar() {
+  const { data: users = [] } = useUsers();
+
+  if (users.length === 0) {
+    return null;
+  }
+
   return (
     <div className="px-6 py-4 hidden lg:block mt-10">
       <div className="bg-[#24313b] rounded-xl p-4">
         <h2 className="text-white text-xl font-semibold">Who to follow</h2>
-        <div></div>
+        <div className="flex flex-col gap-6 mt-4">
+          {users.map((user: Record<string, any>) => (
+            <div key={user.id} className="flex flex-row gap-4">
+              <Avatar userId={user.id} />
+              <div className="flex- flex-col">
+                <p className="text-white font-semibold text-sm">{user.name}</p>
+                <p className="text-neutral-400 text-sm">@{user.username}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
